@@ -1,21 +1,44 @@
-# Canby Community Clinic Website — Upload Instructions
+# Canby Community Clinic Website — Fixed Version 2
 
-This package is built for the GitHub Pages repository `CanbyClinic/CanbyCLinic`.
+This is the replacement package for the GitHub Pages repository `CanbyClinic/CanbyCLinic`.
 
-## Upload the website
+## Upload the corrected website
 
-1. Download and unzip `canby-community-clinic-github-site.zip`.
-2. Open the GitHub repository and click **Code**.
-3. Click **Add file → Upload files**.
-4. Drag **all files and folders inside** the unzipped folder into GitHub. Do not upload only the ZIP.
-5. Select **Commit directly to the main branch** and click **Commit changes**.
-6. Wait 1–3 minutes, then open `https://canbyclinic.github.io/CanbyCLinic/`.
+1. Download and unzip `canby-community-clinic-fixed-v2.zip`.
+2. Open the GitHub repository and click **Code → Add file → Upload files**.
+3. Drag **all files and folders inside** the unzipped folder into GitHub. Do not upload the ZIP itself.
+4. Select **Commit directly to the main branch** and click **Commit changes**.
+5. Wait 1–3 minutes and hard-refresh `https://canbyclinic.github.io/CanbyCLinic/` with **Command + Shift + R**.
 
-## Connect `puravidacc.org` after the site is tested
+The upload replaces matching files and adds the new editorial-policy page. Old unused image files may remain in GitHub without affecting the live site.
+
+## What was corrected
+
+- Rebuilt responsive page layouts and typography
+- Replaced stretched and low-resolution visuals with optimized WebP images
+- Created seven distinct article hero images with responsive 800 px versions
+- Constrained service icons so they cannot expand beyond their cards
+- Corrected capitalization and button labels
+- Added an interactive Patient Resources “Care Compass”
+- Added unique titles, descriptions, canonicals, Open Graph data, article schema, internal links, source lists, and an image-enabled sitemap
+- Added reciprocal English/Spanish `hreflang` tags
+- Added an editorial policy explaining sourcing, updates, medical limitations, and illustrative imagery
+- Rebuilt favicon and app icons from the clinic mark
+- Removed public collection of medical details and kept ordinary forms limited to nonclinical contact information
+
+## Donation setup
+
+The site intentionally does **not** collect card numbers. To activate secure online donations, add a verified hosted checkout URL from Stripe, PayPal, Givebutter, or another approved processor in:
+
+`assets/js/config.js`
+
+Replace the empty value in `hostedDonationCheckoutUrl`. Until that is configured, donation buttons safely route to the donation-options page instead of opening a broken checkout.
+
+## Connect `puravidacc.org` after testing
 
 In GitHub: **Settings → Pages → Custom domain → `puravidacc.org` → Save**.
 
-In GoDaddy DNS, remove conflicting parking/website A records and add:
+In GoDaddy DNS, remove conflicting parking/website records and add:
 
 | Type | Name | Value |
 |---|---|---|
@@ -25,21 +48,8 @@ In GoDaddy DNS, remove conflicting parking/website A records and add:
 | A | @ | 185.199.111.153 |
 | CNAME | www | canbyclinic.github.io |
 
-Do not use a wildcard DNS record. After GitHub provisions the certificate, enable **Enforce HTTPS**. DNS and certificate provisioning can take time.
+After GitHub provisions the certificate, enable **Enforce HTTPS**.
 
-## Required before final public launch
+## Final clinic review required
 
-1. Connect a verified hosted donation processor. This package intentionally does not collect card data.
-2. Have counsel or the privacy/compliance officer approve the formal Notice of Privacy Practices, nondiscrimination notice, privacy policy, terms, and donation language.
-3. Confirm the permanent public and legal clinic names, the check payee, eligibility, insurance requirements, costs, services, languages, parking, public transit, and walk-in policy.
-4. Replace concept images with real clinic photography when available. The current imagery is AI-generated editorial imagery and does not portray actual staff or facilities.
-5. Do not add ordinary online forms that collect symptoms, diagnoses, test results, medical records, insurance member numbers, or other health information. GitHub Pages is a public static host, not a HIPAA patient portal.
-
-## Website structure
-
-- English and Spanish core pages
-- Separate pages for services, appointments, about, patient resources, volunteer, donate, contact, location, privacy, notices, accessibility, and terms
-- Seven long-form health articles with source lists
-- Responsive navigation and mobile call/appointment buttons
-- No advertising trackers, analytics pixels, or cookies
-- `robots.txt`, `sitemap.xml`, structured data, favicon, and manifest
+Before public launch, clinic leadership should confirm the legal entity name, services, eligibility, costs, insurance rules, languages, appointment process, check payee, parking/transit details, privacy notices, and donation language. Generated photographs are illustrative and do not depict actual staff, patients, or the actual clinic facility.
