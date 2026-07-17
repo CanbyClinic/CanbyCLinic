@@ -1,1 +1,1 @@
-Drag the v41 folder in this package into the GitHub repository root. It must merge with the existing v41 folder.
+Upload the v42 folder to the GitHub repository root. GitHub will merge v42/images with Part 1.
